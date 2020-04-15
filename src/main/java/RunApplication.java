@@ -45,7 +45,6 @@ public class RunApplication {
         return  xmlMapper.readValue(new FileInputStream(file),  RunReport.class);
     }
 
-
     public static void main(String[] args){
 
 
