@@ -1,12 +1,10 @@
 package BrokenDownXML;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
 import java.util.HashMap;
 import java.util.Map;
 
 
-//@XmlAccessorType(XmlAccessType.FIELD)
+
 public class Fields {
 
 

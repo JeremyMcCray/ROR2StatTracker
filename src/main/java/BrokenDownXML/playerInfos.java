@@ -6,7 +6,7 @@ import javax.xml.bind.annotation.XmlElement;
 import java.util.HashMap;
 import java.util.Map;
 
-//@XmlAccessorType(XmlAccessType.FIELD)
+
 public class playerInfos {
 
 
