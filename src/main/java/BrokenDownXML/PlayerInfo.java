@@ -1,6 +1,10 @@
 package BrokenDownXML;
+
+import javax.xml.bind.annotation.*;
 import java.util.HashMap;
 import java.util.Map;
+
+
 
 public class PlayerInfo {
 
@@ -9,7 +13,10 @@ public class PlayerInfo {
     private String killerBodyName;
     private StatSheet statSheet;
     private String itemAcquisitionOrder;
+
+
     private ItemStacks itemStacks;
+
     private String equipment;
     private String finalMessageToken;
     private String localPlayerIndex;
@@ -40,6 +47,7 @@ public class PlayerInfo {
         this.killerBodyName = killerBodyName;
     }
 
+    @XmlElement(name = "statSheet")
     public StatSheet getStatSheet() {
         return statSheet;
     }
@@ -56,6 +64,7 @@ public class PlayerInfo {
         this.itemAcquisitionOrder = itemAcquisitionOrder;
     }
 
+    @XmlElement(name = "itemStacks")
     public ItemStacks getItemStacks() {
         return itemStacks;
     }
@@ -104,4 +113,21 @@ public class PlayerInfo {
         this.additionalProperties.put(name, value);
     }
 
+
+
+    public String toString() {
+        return "\n playerInfo{" +
+                "name='" + name + '\n' +
+                ", bodyName='" + bodyName + '\n' +
+                ", killerBodyName='" + killerBodyName + '\n' +
+                ", statSheet=" + statSheet.toString() +
+                ", itemAcquisitionOrder='" + itemAcquisitionOrder + '\n' +
+                ", itemStacks=" + itemStacks.toString() +
+                "\n , equipment='" + equipment + '\n' +
+                ", finalMessageToken='" + finalMessageToken + '\n' +
+                ", localPlayerIndex='" + localPlayerIndex + '\n' +
+                ", userProfileFileName='" + userProfileFileName + '\n' +
+                ", additionalProperties=" + additionalProperties +
+                '}';
+    }
 }

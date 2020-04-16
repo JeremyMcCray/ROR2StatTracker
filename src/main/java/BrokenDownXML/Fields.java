@@ -1,8 +1,12 @@
 package BrokenDownXML;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import java.util.HashMap;
 import java.util.Map;
 
+
+//@XmlAccessorType(XmlAccessType.FIELD)
 public class Fields {
 
 
@@ -880,5 +884,25 @@ public class Fields {
         this.additionalProperties.put(name, value);
     }
 
+
+    @Override
+    public String toString() {
+        return "Fields{" +
+                "totalGamesPlayed='" + totalGamesPlayed + '\n' +
+                ", totalTimeAlive='" + totalTimeAlive + '\n' +
+                ", totalKills='" + totalKills + '\n' +
+                ", totalDeaths='" + totalDeaths + '\n' +
+                ", totalDamageDealt='" + totalDamageDealt + '\n' +
+                ", totalDamageTaken='" + totalDamageTaken + '\n' +
+                ", totalHealthHealed='" + totalHealthHealed + '\n' +
+                ", highestDamageDealt='" + highestDamageDealt + '\n' +
+                ", highestLevel='" + highestLevel + '\n' +
+                ", totalGoldCollected='" + totalGoldCollected + '\n' +
+                ", maxGoldCollected='" + maxGoldCollected + '\n' +
+                ", totalDistanceTraveled='" + totalDistanceTraveled + '\n' +
+                ", totalItemsCollected='" + totalItemsCollected + '\n' +
+                ", totalStagesCompleted='" + totalStagesCompleted + '\n' +
+                '}';
+    }
 }
 

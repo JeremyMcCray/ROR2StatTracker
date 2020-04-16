@@ -1,9 +1,12 @@
 package BrokenDownXML;
 
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.HashMap;
 import java.util.Map;
 
+@XmlRootElement(name = "RunReport")
 public class RunReport {
 
     private String version;
@@ -13,7 +16,10 @@ public class RunReport {
     private String snapshotTime;
     private String runStopwatchValue;
     private String ruleBook;
-    private PlayerInfos playerInfos;
+
+
+    private BrokenDownXML.playerInfos playerInfos;
+
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     public String getVersion() {
@@ -72,11 +78,12 @@ public class RunReport {
         this.ruleBook = ruleBook;
     }
 
-    public PlayerInfos getPlayerInfos() {
+    @XmlElement(name = "playerInfos")
+    public BrokenDownXML.playerInfos getPlayerInfos() {
         return playerInfos;
     }
 
-    public void setPlayerInfos(PlayerInfos playerInfos) {
+    public void setPlayerInfos(BrokenDownXML.playerInfos playerInfos) {
         this.playerInfos = playerInfos;
     }
 
@@ -88,4 +95,19 @@ public class RunReport {
         this.additionalProperties.put(name, value);
     }
 
+
+    @Override
+    public String toString() {
+        return "RunReport{" +
+                "version='" + version + '\n' +
+                ", gameModeName='" + gameModeName + '\n' +
+                ", gameResultType='" + gameResultType + '\n' +
+                ", seed='" + seed + '\n' +
+                ", snapshotTime='" + snapshotTime + '\n' +
+                ", runStopwatchValue='" + runStopwatchValue + '\n' +
+                ", ruleBook='" + ruleBook + '\n' +
+                ", playerInfos= this line right here --------" + playerInfos.toString() +
+                "\n , additionalProperties=" + additionalProperties +
+                '}';
+    }
 }
